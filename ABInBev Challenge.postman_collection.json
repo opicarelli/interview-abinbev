@@ -1,0 +1,1240 @@
+{
+	"info": {
+		"_postman_id": "71ac34de-3a1f-4e34-bef8-d2ff2b1dbe2b",
+		"name": "ABInBev Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "Update an existent product.",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": \"1\",\n    \"id\": \"1\",\n    \"name\": \"Beer One!\",\n    \"price\": \"2.99\",\n    \"description\": \"Beer One! Description\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Returned successfully.",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brandId\": 1,\n    \"id\": 1,\n    \"name\": \"Beer One\",\n    \"price\": 1.99,\n    \"description\": \"Beer One description\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+						},
+						{
+							"name": "Product not found.",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brandId\": 1,\n    \"id\": 1,\n    \"name\": \"Beer One\",\n    \"price\": 1.99,\n    \"description\": \"Beer One description\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+						},
+						{
+							"name": "Bad request.",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brandId\": 1,\n    \"id\": 1,\n    \"name\": \"Beer One\",\n    \"price\": 1.99,\n    \"description\": \"Beer One description\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+						},
+						{
+							"name": "Internal error.",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brandId\": 1,\n    \"id\": 1,\n    \"name\": \"Beer One\",\n    \"price\": 1.99,\n    \"description\": \"Beer One description\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a new product.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandId\": \"1\",\n    \"name\": \"Beer One\",\n    \"price\": \"1.99\",\n    \"description\": \"Beer One Description\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Returned successfully.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brandId\": 1,\n    \"id\": 1,\n    \"name\": \"Beer One\",\n    \"price\": 1.99,\n    \"description\": \"Beer One description\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+						},
+						{
+							"name": "Internal error.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brandId\": 1,\n    \"id\": 1,\n    \"name\": \"Beer One\",\n    \"price\": 1.99,\n    \"description\": \"Beer One description\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+						},
+						{
+							"name": "Bad request.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brandId\": 1,\n    \"id\": 1,\n    \"name\": \"Beer One\",\n    \"price\": 1.99,\n    \"description\": \"Beer One description\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete an existent product.",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Bad request.",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal error.",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Product not found.",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Returned successfully.",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Get products by filters, pagination and orders.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/search?startIndex=0&quantityPerPage=20&orderColumnName=name&orderCriteria=asc",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Beer",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Description",
+									"disabled": true
+								},
+								{
+									"key": "priceGreaterThan",
+									"value": "0.5",
+									"disabled": true
+								},
+								{
+									"key": "priceLessThan",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "brandId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "startIndex",
+									"value": "0"
+								},
+								{
+									"key": "quantityPerPage",
+									"value": "20"
+								},
+								{
+									"key": "orderColumnName",
+									"value": "name"
+								},
+								{
+									"key": "orderCriteria",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Internal error.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/search?name=Beer One&description=Beer One Description&priceGreaterThan=1&priceLessThan=10&brandId=1&startIndex=0&quantityPerPage=20&orderColumnName=name,price&orderCriteria=asc,desc",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"search"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Beer One"
+										},
+										{
+											"key": "description",
+											"value": "Beer One Description"
+										},
+										{
+											"key": "priceGreaterThan",
+											"value": "1"
+										},
+										{
+											"key": "priceLessThan",
+											"value": "10"
+										},
+										{
+											"key": "brandId",
+											"value": "1"
+										},
+										{
+											"key": "startIndex",
+											"value": "0"
+										},
+										{
+											"key": "quantityPerPage",
+											"value": "20"
+										},
+										{
+											"key": "orderColumnName",
+											"value": "name,price"
+										},
+										{
+											"key": "orderCriteria",
+											"value": "asc,desc"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"products\": [\n  {\n   \"id\": 1,\n   \"name\": \"Beer One\",\n   \"description\": \"Beer One description\",\n   \"price\": 1.99,\n   \"brandName\": \"Brand One\"\n  },\n  {\n   \"id\": 1,\n   \"name\": \"Beer One\",\n   \"description\": \"Beer One description\",\n   \"price\": 1.99,\n   \"brandName\": \"Brand One\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Returned successfully.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/search?name=Beer One&description=Beer One Description&priceGreaterThan=1&priceLessThan=10&brandId=1&startIndex=0&quantityPerPage=20&orderColumnName=name,price&orderCriteria=asc,desc",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"search"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Beer One"
+										},
+										{
+											"key": "description",
+											"value": "Beer One Description"
+										},
+										{
+											"key": "priceGreaterThan",
+											"value": "1"
+										},
+										{
+											"key": "priceLessThan",
+											"value": "10"
+										},
+										{
+											"key": "brandId",
+											"value": "1"
+										},
+										{
+											"key": "startIndex",
+											"value": "0"
+										},
+										{
+											"key": "quantityPerPage",
+											"value": "20"
+										},
+										{
+											"key": "orderColumnName",
+											"value": "name,price"
+										},
+										{
+											"key": "orderCriteria",
+											"value": "asc,desc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"products\": [\n  {\n   \"id\": 1,\n   \"name\": \"Beer One\",\n   \"description\": \"Beer One description\",\n   \"price\": 1.99,\n   \"brandName\": \"Brand One\"\n  },\n  {\n   \"id\": 1,\n   \"name\": \"Beer One\",\n   \"description\": \"Beer One description\",\n   \"price\": 1.99,\n   \"brandName\": \"Brand One\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Bad request.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/search?name=Beer One&description=Beer One Description&priceGreaterThan=1&priceLessThan=10&brandId=1&startIndex=0&quantityPerPage=20&orderColumnName=name,price&orderCriteria=asc,desc",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"search"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Beer One"
+										},
+										{
+											"key": "description",
+											"value": "Beer One Description"
+										},
+										{
+											"key": "priceGreaterThan",
+											"value": "1"
+										},
+										{
+											"key": "priceLessThan",
+											"value": "10"
+										},
+										{
+											"key": "brandId",
+											"value": "1"
+										},
+										{
+											"key": "startIndex",
+											"value": "0"
+										},
+										{
+											"key": "quantityPerPage",
+											"value": "20"
+										},
+										{
+											"key": "orderColumnName",
+											"value": "name,price"
+										},
+										{
+											"key": "orderCriteria",
+											"value": "asc,desc"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"products\": [\n  {\n   \"id\": 1,\n   \"name\": \"Beer One\",\n   \"description\": \"Beer One description\",\n   \"price\": 1.99,\n   \"brandName\": \"Brand One\"\n  },\n  {\n   \"id\": 1,\n   \"name\": \"Beer One\",\n   \"description\": \"Beer One description\",\n   \"price\": 1.99,\n   \"brandName\": \"Brand One\"\n  }\n ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get product by name.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/name/:name",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"name",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "Beer One",
+									"type": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Internal error.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/name/:name",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"name",
+										":name"
+									],
+									"variable": [
+										{
+											"key": "name"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+						},
+						{
+							"name": "Product not found.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/name/:name",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"name",
+										":name"
+									],
+									"variable": [
+										{
+											"key": "name"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+						},
+						{
+							"name": "Returned successfully.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/name/:name",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"name",
+										":name"
+									],
+									"variable": [
+										{
+											"key": "name"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+						},
+						{
+							"name": "Bad request.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/name/:name",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"name",
+										":name"
+									],
+									"variable": [
+										{
+											"key": "name"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get product by id.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/id/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"id",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "string",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Returned successfully.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/id/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"id",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+						},
+						{
+							"name": "Internal error.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/id/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"id",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+						},
+						{
+							"name": "Bad request.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/id/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"id",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+						},
+						{
+							"name": "Product not found.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/products/id/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"id",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8818192e-b562-41b1-9630-28e4b62c5a51",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3d44eec1-ba65-44f6-b86a-4ea72b5729c1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Authenticate API by JWT.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e3e4b927-25cf-4a12-8b11-3f9b8ee49bff",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"jwt\", jsonData.jwt);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/auth",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Bad request.",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"<string>\",\n    \"password\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"jwt\": \"sit\"\n}"
+				},
+				{
+					"name": "Returned successfully.",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"<string>\",\n    \"password\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"id\": 1,\n \"name\": \"Beer One\",\n \"description\": \"Beer One description\",\n \"price\": 1.99,\n \"brandName\": \"Brand One\"\n}"
+				},
+				{
+					"name": "Internal error.",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"<string>\",\n    \"password\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"jwt\": \"sit\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{jwt}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "db41e9bd-b68b-4085-b02c-59c27fcdab82",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e63f2392-7083-4278-939f-63de0229dbdb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "54f9c3df-bf49-4f93-96b9-266662bfe121",
+			"key": "baseUrl",
+			"value": "http://localhost:8080/challenge/v1"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
